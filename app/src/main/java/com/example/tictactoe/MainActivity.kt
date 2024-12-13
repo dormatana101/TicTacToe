@@ -78,6 +78,7 @@ class MainActivity : AppCompatActivity() {
             for (j in 0..2) {
                 if (Board[i][j] == 0) {
                     return false
+                    print("Board is full")
                 }
             }
         }
