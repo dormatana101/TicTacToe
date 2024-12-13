@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var score2: TextView
     private lateinit var gameState: TextView
     private lateinit var Board: Array<IntArray>
+    private var PlayerStart: Int? = null
     private var PlayerTurn: Int? = null
     private var ButtonStatus: Boolean = true
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         score1 = findViewById(R.id.player1_score)
         score2 = findViewById(R.id.player2_score)
         gameState = findViewById(R.id.game_status)
-
+        PlayerStart=1
         PlayerTurn=1
         Board = Array(3) { IntArray(3) { 0 } } //0 is empty, 1 is X, 2 is O
 
@@ -243,6 +244,14 @@ class MainActivity : AppCompatActivity() {
         bottomcenter.text = ""
         bottomright.text = ""
         PlayerTurn = 1
+        if(PlayerStart==1)
+        {
+            PlayerStart=2
+        }
+        else
+        {
+            PlayerStart=1
+        }
         Board = Array(3) { IntArray(3) { 0 } }
         // Reset scores
         score1.text = "0"
@@ -346,12 +355,14 @@ class MainActivity : AppCompatActivity() {
         bottomright.text = ""
         ButtonStatus=true
         DisableAndEnableButton()
-        if (PlayerTurn == 1) {
-            PlayerTurn = 2
-        } else {
-            PlayerTurn = 1
+        if(PlayerStart==1)
+        {
+            PlayerStart=2
         }
-
+        else
+        {
+            PlayerStart=1
+        }
     }
     private fun DisableAndEnableButton(){
         if(ButtonStatus==false)
