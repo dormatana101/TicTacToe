@@ -222,9 +222,9 @@ class MainActivity : AppCompatActivity() {
             if(restartButton.text=="Play Again")
             {
                 ClearBoard()
-                restartButton.text="Restart"
+                restartButton.text="Restart Game"
             }
-            else if(restartButton.text=="Restart")
+            else if(restartButton.text=="Restart Game")
             {
                 resetGame()
             }
@@ -244,14 +244,7 @@ class MainActivity : AppCompatActivity() {
         bottomcenter.text = ""
         bottomright.text = ""
         PlayerTurn = 1
-        if(PlayerStart==1)
-        {
-            PlayerStart=2
-        }
-        else
-        {
-            PlayerStart=1
-        }
+        PlayerStart=1
         Board = Array(3) { IntArray(3) { 0 } }
         // Reset scores
         score1.text = "0"
@@ -357,10 +350,12 @@ class MainActivity : AppCompatActivity() {
         DisableAndEnableButton()
         if(PlayerStart==1)
         {
+            PlayerTurn=2
             PlayerStart=2
         }
         else
         {
+            PlayerTurn=1
             PlayerStart=1
         }
     }
