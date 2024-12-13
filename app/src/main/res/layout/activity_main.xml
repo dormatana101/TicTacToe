@@ -130,7 +130,9 @@
             android:layout_margin="4dp"
             android:contentDescription="Button 10"
             android:background="#E0E0E0"
-            android:text=""/>
+            android:text=""
+            android:textSize="24sp"
+            />
 
         <Button
             android:id="@+id/button_11"
