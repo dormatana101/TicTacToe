@@ -76,7 +76,7 @@
         android:text="0"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="#FF0000"
+        android:textColor="#FF0900"
         android:layout_below="@id/player2_label"
         android:layout_alignEnd="@id/player2_label"
         android:layout_marginTop="4dp" />
